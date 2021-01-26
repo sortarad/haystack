@@ -1,0 +1,23 @@
+{
+    "name": "sortarad/haystack",
+    "description": "Finding a needle in a haystack is easy.",
+    "keywords": ["statamic"],
+    "homepage": "https://github.com/sortarad/haystack",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Sortarad\\Haystack\\": "src"
+        }
+    },
+    "extra": {
+        "statamic": {
+            "name": "Haystack",
+            "description": "Haystack addon"
+        },
+        "laravel": {
+            "providers": [
+                "Sortarad\\Haystack\\ServiceProvider"
+            ]
+        }
+    }
+}
