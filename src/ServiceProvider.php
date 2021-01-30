@@ -2,10 +2,22 @@
 
 namespace Sortarad\Haystack;
 
+use Statamic\Statamic;
+use Statamic\Support\Str;
+use Statamic\Facades\Addon;
 use Statamic\Providers\AddonServiceProvider;
 
 class ServiceProvider extends AddonServiceProvider
 {
+    protected $routes = [
+        'web' => __DIR__.'/../routes/web.php',
+    ];
+
+    protected $publishables = [
+        __DIR__.'/../public' => 'js',
+        __DIR__.'/../resources/data' => 'data',
+    ];
+
     public function boot()
     {
         parent::boot();
