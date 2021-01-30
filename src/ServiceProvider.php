@@ -6,9 +6,14 @@ use Statamic\Statamic;
 use Statamic\Support\Str;
 use Statamic\Facades\Addon;
 use Statamic\Providers\AddonServiceProvider;
+use Sortarad\Haystack\Tags\HaystackTags;
 
 class ServiceProvider extends AddonServiceProvider
 {
+    protected $tags = [
+        HaystackTags::class,
+    ];
+
     protected $routes = [
         'web' => __DIR__.'/../routes/web.php',
     ];

@@ -1,0 +1,19 @@
+<div x-data="Haystack()" x-init="init()">
+	<input
+	  type="text"
+	  name="search"
+	  placeholder="Search codes"
+	  @input.debounce.250ms="search"
+	  x-model="q"
+	  class="w-full outline-none border-b-2 px-2 py-1"
+	/>
+	<ol class="list-reset flex flex-col" :class="{'hidden': results.length == 0}">
+	  <template x-for="result in results">
+		<li class="w-full px-3 py-3 bg-gray-200">
+			<h3 x-text="result.code" class="font-bold"></h3>
+			<p class="text-xs">ID: <span x-text="result.id" ></span></p>
+		</li>
+	  </template>
+	</ol>
+</div>
+<script src="{{ mix src='/js/app.js' in='vendor/haystack' }}"></script>
