@@ -14,7 +14,7 @@ class ServiceProvider extends AddonServiceProvider
     ];
 
     protected $publishables = [
-        __DIR__.'/../public' => 'js',
+        __DIR__.'/../public' => '',
         __DIR__.'/../resources/data' => 'data',
     ];
 

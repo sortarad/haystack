@@ -1,0 +1,1 @@
+window.Haystack=function(){return{items:null,fuse:null,q:"",results:[],init:function(){var t=this;fetch("/haystack/search").then((function(t){return t.json()})).then((function(n){t.items=n})).catch(console.error)},search:function(){var t=this;if(null===this.items)return this.results=[],!1;this.results=this.items.filter((function(n){return n.id===t.q}))}}};
