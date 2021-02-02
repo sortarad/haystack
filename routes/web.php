@@ -1,5 +1,11 @@
 <?php
 
 Route::get('/haystack/search', function() {
-	return response()->file(public_path('vendor/haystack/data/codes.json'));
+	$path = config('haystack.data.path');
+	
+	if (! is_file($path)) {
+		return response('Haystack data not found', 404);
+	}
+
+	return response()->file($path);
 });

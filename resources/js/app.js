@@ -1,9 +1,9 @@
 window.Haystack = function() {
 	return {
-		items: null,
-		fuse: null,
 		q: '',
+		items: null,
 		results: [],
+		error: false,
 		init() {
 			fetch('/haystack/search')
 				.then((response) => response.json())
