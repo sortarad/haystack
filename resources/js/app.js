@@ -1,12 +1,19 @@
 window.Haystack = function() {
 	return {
-		q: '',
+		needle: '',
 		items: null,
 		results: [],
 		error: false,
 		init() {
 			fetch('/haystack/search')
-				.then((response) => response.json())
+				.then((response) => {
+					if (! response.ok) {
+						this.error = true;
+						return null;
+					}
+
+					return response.json()
+				})
 				.then((items) => {
 					this.items = items;
 				})
@@ -19,7 +26,7 @@ window.Haystack = function() {
 			}
 
 			this.results = this.items.filter( ( item ) => {
-				return item.id === this.q;
+				return item.id === this.needle;
 			} );
 		},
 	};

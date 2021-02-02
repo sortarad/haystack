@@ -4,9 +4,12 @@
 	  name="search"
 	  placeholder="Search codes"
 	  @input.debounce.250ms="search"
-	  x-model="q"
+	  x-model="needle"
 	  class="w-full outline-none border-b-2 px-2 py-1"
 	/>
+	<div :class="{'hidden': error === false}">
+		<p class="font-bold w-full px-3 py-3 bg-gray-200">Haystack data file is missing!</p>
+	</div>
 	<ol class="list-reset flex flex-col" :class="{'hidden': results.length == 0}">
 	  <template x-for="result in results">
 		<li class="w-full px-3 py-3 bg-gray-200">
