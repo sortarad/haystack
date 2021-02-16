@@ -17,4 +17,14 @@ class HaystackTags extends Tags
     {
         return view('haystack::search');
     }
+
+    /**
+     * The {{ haystack:assets }} tag.
+     *
+     * @return string|array
+     */
+    public function assets()
+    {
+        return view('haystack::assets');
+    }
 }
